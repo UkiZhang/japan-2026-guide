@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Japan 2026 Guide · Day 1</title>
 <meta name="description" content="Yuqi Family Japan Guide 2026 — Day 1: 南京经上海抵达东京成田">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#17324d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Japan 2026">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+
 <style>
 :root{
   --ink:#18212b;--muted:#66717d;--line:#dfe5ea;--paper:#fff;--soft:#f6f8fa;
@@ -445,5 +452,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').catch(console.error);
+  });
+}
+</script>
 </body>
 </html>
