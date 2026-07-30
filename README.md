@@ -1,1 +1,1 @@
-# japan-2026-guide
+# Japan 2026 PWA Starter
