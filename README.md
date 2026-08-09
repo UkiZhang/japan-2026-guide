@@ -1,21 +1,10 @@
-# Japan 2026 Family Trip — GitHub Pages Final
+# Japan 2026 Family Trip — Light Mode Ultimate
 
-Build: 2026-08-09-pages-v3
+This build forces light mode on all pages, regardless of the iPhone/macOS system appearance.
 
-Upload the **contents of this folder** to the repository root (not the containing folder itself).
+GitHub Pages deployment:
+1. Upload the files in this folder to the repository root.
+2. Settings → Pages → Deploy from a branch → main → /(root)
+3. After deployment, open the site with `?v=4` once to bypass any previous browser cache.
 
-Expected root:
-- index.html
-- day1.html ... day6.html
-- sw.js
-- manifest.webmanifest
-- app-icon.svg
-- .nojekyll
-
-GitHub Pages:
-Settings → Pages → Deploy from a branch → main → /(root)
-
-Cache strategy:
-- HTML/navigation: NETWORK FIRST, then offline cache fallback.
-- Static assets: cache first.
-- Old caches are deleted when this service worker activates.
+Service worker uses network-first for HTML and cache version v4.

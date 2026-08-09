@@ -1,4 +1,4 @@
-const CACHE_NAME = 'japan-2026-pages-v3';
+const CACHE_NAME = 'japan-2026-pages-v4';
 const CORE = ['./', './index.html', './manifest.webmanifest', './app-icon.svg'];
 
 self.addEventListener('install', event => {
