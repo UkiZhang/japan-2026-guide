@@ -76,7 +76,7 @@ pre,.copybox,.address{overflow-wrap:anywhere;word-break:break-word}
 }
 @media(max-width:390px){.shell{width:calc(100% - 14px)!important}.section-card,.card{padding:15px 12px!important}.hero-card{padding:20px 15px!important}.mobile-day-nav{padding-left:3px;padding-right:3px}.mobile-day-nav-inner{gap:1px}.mobile-day-nav a{font-size:9px}.mobile-day-nav .nav-emoji{font-size:16px}}
 </style>
-</head>
+<meta name="app-build" content="2026-08-09-pages-v3"></head>
 <body><div class="trip-appbar"><div class="trip-appbar-inner"><a class="trip-home" href="index.html"><span class="trip-home-badge">🗾</span><span>Japan 2026 · Family Trip</span></a><nav class="trip-daytabs"><a class="trip-daytab " href="day1.html">D1</a><a class="trip-daytab " href="day2.html">D2</a><a class="trip-daytab active" href="day3.html">D3</a><a class="trip-daytab " href="day4.html">D4</a><a class="trip-daytab " href="day5.html">D5</a><a class="trip-daytab " href="day6.html">D6</a></nav></div></div><div class="trip-bottombar"><div class="trip-bottom-inner"><a class="trip-bottom-link" href="index.html"><b>⌂</b>总览</a><a class="trip-bottom-link " href="day1.html"><b>✈️</b>D1</a><a class="trip-bottom-link " href="day2.html"><b>🦆</b>D2</a><a class="trip-bottom-link active" href="day3.html"><b>🛍️</b>D3</a><a class="trip-bottom-link " href="day4.html"><b>♨️</b>D4</a><a class="trip-bottom-link " href="day5.html"><b>🚞</b>D5</a><a class="trip-bottom-link " href="day6.html"><b>🌸</b>D6</a></div></div>
 <div class="shell">
 <header class="hero"><div class="hero-card">
@@ -331,7 +331,7 @@ document.querySelectorAll('.copybtn').forEach(btn=>btn.addEventListener('click',
   try{await navigator.clipboard.writeText(btn.dataset.copy);btn.textContent='已复制 ✓';setTimeout(()=>btn.textContent='复制地址',1500)}catch(e){prompt('请复制：',btn.dataset.copy)}
 }));
 </script>
-<script>if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}</script>
+<script>if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js', {updateViaCache:'none'}).catch(()=>{}));}</script>
 <nav class="mobile-day-nav" aria-label="旅行日期快捷导航"><div class="mobile-day-nav-inner">
 <a class="home" href="index.html" data-page="index"><span class="nav-emoji">🏠</span><span>总览</span></a>
 <a href="day1.html" data-page="day1"><span class="nav-emoji">✈️</span><span>D1</span></a>
@@ -352,4 +352,13 @@ document.querySelectorAll('.copybtn').forEach(btn=>btn.addEventListener('click',
  document.querySelectorAll('.route-image,.route').forEach(img=>img.addEventListener('click',()=>{if(innerWidth>820)return;im.src=img.currentSrc||img.src;im.alt=img.alt||'行程地图';v.classList.add('open');document.body.style.overflow='hidden'}));
 })();
 </script>
-</body></html>
+<script id="sw-update-helper">
+if('serviceWorker' in navigator){
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('sw.js', {updateViaCache:'none'});
+      await reg.update();
+    } catch(e) { console.warn('SW update check failed', e); }
+  });
+}
+</script></body></html>
